@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".net8", ".net8", "{87F9644E-C947-4704-955D-4069C0D5E3C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Count.vs.Any", ".net8\Count.vs.Any\Count.vs.Any.csproj", "{02BDBBAB-E871-432B-8B32-15DB7C561089}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Count.vs.Any", ".net8\Count.vs.Any\Count.vs.Any.csproj", "{02BDBBAB-E871-432B-8B32-15DB7C561089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Find.vs.FirstOrDefault", ".net8\Find.vs.FirstOrDefault\Find.vs.FirstOrDefault.csproj", "{D8B2B362-02B9-45B4-8DE7-BA10AD0768CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,17 @@ Global
 		{02BDBBAB-E871-432B-8B32-15DB7C561089}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02BDBBAB-E871-432B-8B32-15DB7C561089}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02BDBBAB-E871-432B-8B32-15DB7C561089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B2B362-02B9-45B4-8DE7-BA10AD0768CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B2B362-02B9-45B4-8DE7-BA10AD0768CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B2B362-02B9-45B4-8DE7-BA10AD0768CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B2B362-02B9-45B4-8DE7-BA10AD0768CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{02BDBBAB-E871-432B-8B32-15DB7C561089} = {87F9644E-C947-4704-955D-4069C0D5E3C2}
+		{D8B2B362-02B9-45B4-8DE7-BA10AD0768CE} = {87F9644E-C947-4704-955D-4069C0D5E3C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {64243CF7-D07E-448A-BC55-D4209A3F2764}
