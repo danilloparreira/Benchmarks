@@ -1,26 +1,24 @@
-﻿using BenchmarkDotNet.Attributes;
-using Bogus;
+﻿using BaseBenchmark;
+using BenchmarkDotNet.Attributes;
 
 namespace Count.vs.Any;
 
-[RankColumn]
-[MemoryDiagnoser]
-public class Benchmark
+public class Benchmark : BaseBenchmarkClass
 {
-    private readonly int numberItems = 1000;
-    private readonly Faker faker = new();
+    private readonly List<string> stringList = [];
 
-    [Benchmark]
-    public bool CountListItems()
+    public Benchmark()
     {
-        var list = new List<string>();
-
         for (int i = 0; i < numberItems; i++)
         {
-            list.Add(faker.Lorem.Word());
+            stringList.Add(faker.Lorem.Word());
         }
+    }
 
-        var count = list.Count > 0;
+    [Benchmark(Baseline = true)]
+    public bool CountListItems()
+    {
+        var count = stringList.Count > 0;
 
         return count;
     }
@@ -28,14 +26,7 @@ public class Benchmark
     [Benchmark]
     public bool AnyListItems()
     {
-        var list = new List<string>();
-
-        for (int i = 0; i < numberItems; i++)
-        {
-            list.Add(faker.Lorem.Word());
-        }
-
-        var any = list.Any();
+        var any = stringList.Any();
 
         return any;
     }

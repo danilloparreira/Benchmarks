@@ -1,15 +1,11 @@
-﻿using BenchmarkDotNet.Attributes;
-using Bogus;
+﻿using BaseBenchmark;
+using BenchmarkDotNet.Attributes;
 
 namespace Find.vs.FirstOrDefault;
 
-[RankColumn]
-[MemoryDiagnoser]
-public class Benchmark
+public class Benchmark : BaseBenchmarkClass
 {
     private readonly List<string> stringList = [];
-    private readonly int numberItems = 1000;
-    private readonly Faker faker = new();
 
     public Benchmark()
     {
@@ -19,21 +15,19 @@ public class Benchmark
         }
     }
 
-    [Benchmark]
-    public string FindItem()
+    [Benchmark(Baseline = true)]
+    [Arguments("a")]
+    public string FindItem(string item)
     {
-        var item = "a";
-
         var itemFound = stringList.Find(x => x == item);
 
         return itemFound;
     }
 
     [Benchmark]
-    public string FirstOrDefaultItem()
+    [Arguments("a")]
+    public string FirstOrDefaultItem(string item)
     {
-        var item = "a";
-
         var itemFound = stringList.FirstOrDefault(x => x == item);
 
         return itemFound;
